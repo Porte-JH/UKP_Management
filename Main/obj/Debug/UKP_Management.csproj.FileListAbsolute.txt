@@ -22,3 +22,4 @@ C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\EntityFramework.xml
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\System.Data.SQLite.xml
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Login_Log.resources

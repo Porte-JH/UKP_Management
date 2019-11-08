@@ -89,6 +89,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CS\Login_Log.resx">
+      <DependentUpon>Login_Log.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CS\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
