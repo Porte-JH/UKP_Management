@@ -12,53 +12,37 @@ using OpenQA.Selenium.IE;
 using System.Windows.Forms;
 using System.Threading;
 using System.Data.SQLite;
+
+
+
 namespace Main
 {
-
+    
     public partial class Main : Form
     {
-        private SQLiteConnection conn = null;
+
+        DBHelper db = new DBHelper();
+        DTO Student = new DTO();
+
+        
+
+        string input_id;
+        string input_pw;
+
+        
+        
         public Main()
         {
 
             InitializeComponent();
+            
 
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
-
-            string DbFile = "MyDatabase.dat";
-            string ConnectionString = string.Format("Data Source={0};Version=3;", DbFile);
-
-            try
-            {
-                if (!System.IO.File.Exists(DbFile))
-                {
-                    SQLiteConnection.CreateFile(DbFile);  // SQLite DB 생성
-                }
-                else  // 기능 동작 여부 확인을 위해서 추가했지만 불필요
-                {
-                    MessageBox.Show("DB 생성되어 있습니다");
-                    return;
-                }
-
-                // 테이블 생성 코드
-                SQLiteConnection sqliteConn = new SQLiteConnection(ConnectionString);
-                sqliteConn.Open();
-
-                string strsql = "CREATE TABLE IF NOT EXISTS DATA (Id varchar(20), pw varchar(20))";
-
-                SQLiteCommand cmd = new SQLiteCommand(strsql, sqliteConn);
-                cmd.ExecuteNonQuery();
-                sqliteConn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return;
-            }
-            
+            db.Create_DB();
+            db.CREATE_TABLE();
         }
 
 
@@ -73,6 +57,8 @@ namespace Main
             sys_driver.Url = "http://kpis4.kimpo.ac.kr:8000/hosting/group/kpis/html/kpis_main.php";
 
             sys_driver.FindElement(By.LinkText("정보광장")).Click();
+        
+
         }
 
         public void Login_Check(string input_id, string input_pw, IWebDriver check_driver)
@@ -106,37 +92,43 @@ namespace Main
             check_driver.FindElement(By.XPath("/html/body/div[1]/div[2]/div[1]/ul[1]/li[2]/span[3]/div/button")).Click();
         }
 
-        public void Save_Data(string id, string pw, SQLiteConnection sqliteConn, SQLiteCommand cmd)
-        {
-            if(checkBox1.Checked == true)
-            {
-                sqliteConn.Open();
-                string sql = "insert into members (id, pw) values ('" + id + "', '" + pw + "')";
-                cmd = new SQLiteCommand(sql, sqliteConn);
-                cmd.ExecuteNonQuery();
-                sqliteConn.Close();
-            }
-        }
-
+        
+        
+        
         
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            
-            
-            var input_id = textBox1.Text;
-            var input_pw = textBox2.Text;
+            input_id = textBox1.Text;
+            input_pw = textBox2.Text;
+
+            if(textBox1.Text == "" && textBox2.Text == "")
+            {
+                MessageBox.Show("아이디 또는 비밀번호를 제대로 입력해주세요.");
+                return;
+            }
+
+            textBox1.Text = "";
+            textBox2.Text = "";
+
             int Now_Hour = int.Parse(DateTime.Now.ToString("hh"));
+
+            var ChromeService = ChromeDriverService.CreateDefaultService();
+            ChromeService.HideCommandPromptWindow = true;
+            var IEService = InternetExplorerDriverService.CreateDefaultService();
+            IEService.HideCommandPromptWindow = true;
 
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                    IWebDriver sys_driver = new InternetExplorerDriver();
+
+                    IWebDriver sys_driver = new InternetExplorerDriver(IEService, new InternetExplorerOptions());
                     Login_Sys(input_id, input_pw, sys_driver);
-                    //Save_Data(input_id, input_pw, sqliteConn, cmd);
+                    
                     break;
                 case 1:
-                    IWebDriver check_driver = new ChromeDriver();
+                    
+                    IWebDriver check_driver = new ChromeDriver(ChromeService, new ChromeOptions());
                     Login_Check(input_id, input_pw, check_driver);
 
                     if (textBox3.Text != "")
@@ -173,22 +165,32 @@ namespace Main
                         }
 
                     }
-
+                    
                     break;
                 case 2:
-                    IWebDriver ncs_driver = new ChromeDriver();
+                    
+                    IWebDriver ncs_driver = new ChromeDriver(ChromeService, new ChromeOptions());
                     Login_Ncs(input_id, input_pw, ncs_driver);
+                                        
                     break;
                 default:
                     MessageBox.Show("항목을 선택해주세요...!");
                     break;
             }
-
-
-
+            
         }
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CS.Login_Log Login_Log = new CS.Login_Log();
+            Login_Log.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CS.Login_Data Login_Data = new CS.Login_Data();
+            Login_Data.Show();
+        }
     }
 }
 

@@ -52,7 +52,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(123, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 54);
+            this.pictureBox1.Size = new System.Drawing.Size(147, 54);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -98,6 +98,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "로그인";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // checkBox1
             // 
@@ -138,6 +139,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "불러오기";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
@@ -163,6 +165,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "로그인 기록";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
