@@ -87,6 +87,8 @@
     <Compile Include="CS\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="DBHelper.cs" />
+    <Compile Include="DTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CS\Login_Log.resx">

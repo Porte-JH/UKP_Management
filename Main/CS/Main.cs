@@ -20,7 +20,12 @@ namespace Main
     
     public partial class Main : Form
     {
-       
+
+        DBHelper db = new DBHelper();
+        DTO Student = new DTO();
+
+        
+
         string input_id;
         string input_pw;
 
@@ -36,9 +41,8 @@ namespace Main
 
         private void Main_Load(object sender, EventArgs e)
         {
-
-                      
-
+            db.Create_DB();
+            db.CREATE_TABLE();
         }
 
 
@@ -97,6 +101,13 @@ namespace Main
         {
             input_id = textBox1.Text;
             input_pw = textBox2.Text;
+
+            if(textBox1.Text == "" && textBox2.Text == "")
+            {
+                MessageBox.Show("아이디 또는 비밀번호를 제대로 입력해주세요.");
+                return;
+            }
+
             textBox1.Text = "";
             textBox2.Text = "";
 
@@ -171,8 +182,14 @@ namespace Main
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
-            
+            CS.Login_Log Login_Log = new CS.Login_Log();
+            Login_Log.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CS.Login_Data Login_Data = new CS.Login_Data();
+            Login_Data.Show();
         }
     }
 }
