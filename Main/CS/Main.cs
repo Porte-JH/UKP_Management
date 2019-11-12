@@ -28,7 +28,8 @@ namespace Main
 
         string input_id;
         string input_pw;
-
+        string Temp;
+        string Name;
         
         
         public Main()
@@ -57,7 +58,11 @@ namespace Main
             sys_driver.Url = "http://kpis4.kimpo.ac.kr:8000/hosting/group/kpis/html/kpis_main.php";
 
             sys_driver.FindElement(By.LinkText("정보광장")).Click();
-        
+            Thread.Sleep(2000);
+            ///html/frameset/frameset/frame/html/body/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td[1]/table/tbody/tr/td[2]/span
+            //Temp = sys_driver.FindElement(By.s)).Text;
+            Name = Temp.Substring(0, 3);
+            MessageBox.Show(Name);
 
         }
 
@@ -68,6 +73,11 @@ namespace Main
             check_id.SendKeys(input_id);
             check_driver.FindElement(By.XPath("//*[@id='passwd']")).SendKeys(input_pw);
             check_driver.FindElement(By.XPath("//*[@id='loginform']/button")).Click();
+            Thread.Sleep(2000);
+            Temp = check_driver.FindElement(By.XPath("/html/body/div[1]/div[2]/section[1]/div/ul/li[1]")).Text;
+            Name = Temp.Substring(5, 3);
+            
+            Student.Name = Name;
         }
 
         public void Login_Ncs(string input_id, string input_pw, IWebDriver ncs_driver)
@@ -80,6 +90,13 @@ namespace Main
 
             ncs_driver.FindElement(By.XPath("/html/body/div[1]/div/div/div/div/div[2]/form/div/label[2]")).Click();
             ncs_driver.FindElement(By.XPath("//*[@id='loginBtn']")).Click();
+            ///html/body/nav/div[2]/ul[2]/li/a/span
+            Temp = ncs_driver.FindElement(By.XPath("html/body/nav/div[2]/ul[2]/li/a/span")).Text;
+            Name = Temp.Substring(0, 3);
+            Student.Name = Name;
+            //MessageBox.Show(Name);
+
+
         }
 
         public void Check(IWebDriver check_driver, string link_value)
@@ -106,6 +123,9 @@ namespace Main
             {
                 MessageBox.Show("아이디 또는 비밀번호를 제대로 입력해주세요.");
                 return;
+            }  else
+            {
+                Student.input_id = input_id;
             }
 
             textBox1.Text = "";
