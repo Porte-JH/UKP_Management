@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using Main;
 
 namespace Main
 {
@@ -24,6 +25,20 @@ namespace Main
                 return;
             }
 
+        }
+
+        public void OPEN_DB()
+        {
+
+            SQLiteConnection conn = new SQLiteConnection(ConnectionString);
+            conn.Open();
+
+        }
+
+        public void CLOSE_DB()
+        {
+            SQLiteConnection conn = new SQLiteConnection(ConnectionString);
+            conn.Close();
         }
 
         public void CREATE_TABLE()
@@ -49,19 +64,22 @@ namespace Main
 
             cmd.ExecuteNonQuery();
             conn.Close();
+                    
         }
 
-        public DTO SELECT_TABLE(string input_ID)
+        public void SELECT_TABLE(string input_ID)
         {
             SQLiteConnection conn = new SQLiteConnection(ConnectionString);
             conn.Open();
 
-            String select_sql = "SELECT * FROM Student";
+            DTO D = null;
+
+            String select_sql = "SELECT * FROM Student where ID = '" + input_ID + "'";
 
             SQLiteCommand cmd = new SQLiteCommand(select_sql, conn);
             SQLiteDataReader reader = cmd.ExecuteReader();
 
-            return DTO;
+          
         }
     }
 }
