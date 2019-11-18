@@ -47,19 +47,22 @@ namespace Main
             conn.Open();
 
             string strsql = "CREATE TABLE IF NOT EXISTS Student" +
-                            "(ID varchar(20), Name varchar(20))";
+                            "(ID varchar(20), Name varchar(20), FDATE varchar(30), BDATE varchar(30)," +
+                            "PRIMARY KEY(ID))";
             SQLiteCommand cmd = new SQLiteCommand(strsql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
 
-        public void INSERT_TABLE(string ID, string Name)
+        public void INSERT_TABLE(string ID, string Name, string FDATE, string BDATE)
         {
             SQLiteConnection conn = new SQLiteConnection(ConnectionString);
             conn.Open();
+            
 
-            String insert_sql = "INSERT INTO Student" +
-                                "(ID, Name) values ('" + ID + "','" + Name + "')";
+            string insert_sql = "INSERT INTO Student" +
+                                "(ID, Name, FDATE, BDATE) values ('" + ID + "','" + Name + 
+                                "', '" + FDATE + "', '" + BDATE + "')";
             SQLiteCommand cmd = new SQLiteCommand(insert_sql, conn);
 
             cmd.ExecuteNonQuery();
@@ -72,9 +75,9 @@ namespace Main
             SQLiteConnection conn = new SQLiteConnection(ConnectionString);
             conn.Open();
 
-            DTO D = null;
+            
 
-            String select_sql = "SELECT * FROM Student where ID = '" + input_ID + "'";
+            string select_sql = "SELECT * FROM Student where ID = '" + input_ID + "'";
 
             SQLiteCommand cmd = new SQLiteCommand(select_sql, conn);
             SQLiteDataReader reader = cmd.ExecuteReader();
