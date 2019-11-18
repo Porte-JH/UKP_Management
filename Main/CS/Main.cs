@@ -30,8 +30,11 @@ namespace Main
         string input_pw;
         string Temp;
         string Name;
-        
-        
+
+        string FDATE = DateTime.Now.ToString("yyyy-MM-dd");
+        string BDATE = DateTime.Now.ToString("HH:mm");
+
+
         public Main()
         {
 
@@ -56,13 +59,23 @@ namespace Main
             sys_driver.FindElement(By.Name("pw")).SendKeys(input_pw);
             sys_driver.FindElement(By.XPath("//*[@id='wrapper_login']/form/div/table[3]/tbody/tr[1]/td[3]/img")).Click();
             sys_driver.Url = "http://kpis4.kimpo.ac.kr:8000/hosting/group/kpis/html/kpis_main.php";
-
+            Temp = sys_driver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td/table/tbody/tr/td/div/div/div/span/b")).Text;
+            Thread.Sleep(1000);
             sys_driver.FindElement(By.LinkText("정보광장")).Click();
-            Thread.Sleep(2000);
+            
             ///html/frameset/frameset/frame/html/body/table/tbody/tr/td/table/tbody/tr/td[1]/table/tbody/tr/td[1]/table/tbody/tr/td[2]/span
-            //Temp = sys_driver.FindElement(By.s)).Text;
-            Name = Temp.Substring(0, 3);
-            MessageBox.Show(Name);
+            //Temp = sys_driver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td/table/tbody/tr/td/div/div/div/span/b")).Text;
+
+            Student.Name = Temp.Substring(0, 3);
+            Student.FDATE = FDATE;
+            Student.BDATE = BDATE;
+
+            if(checkBox1.Checked == true)
+            {
+                db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE);
+            }
+            
+            
 
         }
 
@@ -75,9 +88,16 @@ namespace Main
             check_driver.FindElement(By.XPath("//*[@id='loginform']/button")).Click();
             Thread.Sleep(2000);
             Temp = check_driver.FindElement(By.XPath("/html/body/div[1]/div[2]/section[1]/div/ul/li[1]")).Text;
-            Name = Temp.Substring(5, 3);
+            Student.Name = Temp.Substring(5, 3);
             
-            Student.Name = Name;
+            
+            Student.FDATE = FDATE;
+            Student.BDATE = BDATE;
+
+            if (checkBox1.Checked == true)
+            {
+                db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE);
+            }
         }
 
         public void Login_Ncs(string input_id, string input_pw, IWebDriver ncs_driver)
@@ -92,9 +112,18 @@ namespace Main
             ncs_driver.FindElement(By.XPath("//*[@id='loginBtn']")).Click();
             ///html/body/nav/div[2]/ul[2]/li/a/span
             Temp = ncs_driver.FindElement(By.XPath("html/body/nav/div[2]/ul[2]/li/a/span")).Text;
-            Name = Temp.Substring(0, 3);
-            Student.Name = Name;
+            Student.Name = Temp.Substring(0, 3);
+            
             //MessageBox.Show(Name);
+
+            Student.FDATE = FDATE;
+            Student.BDATE = BDATE;
+
+
+            if (checkBox1.Checked == true)
+            {
+                db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE);
+            }
 
 
         }
@@ -132,23 +161,28 @@ namespace Main
             textBox2.Text = "";
 
             int Now_Hour = int.Parse(DateTime.Now.ToString("hh"));
-
+            
             var ChromeService = ChromeDriverService.CreateDefaultService();
             ChromeService.HideCommandPromptWindow = true;
-            var IEService = InternetExplorerDriverService.CreateDefaultService();
+
+            var IEService = InternetExplorerDriverService.CreateDefaultService();            
             IEService.HideCommandPromptWindow = true;
+
+            var IEoptions = new InternetExplorerOptions();
+            IEoptions.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+
 
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
 
-                    IWebDriver sys_driver = new InternetExplorerDriver(IEService, new InternetExplorerOptions());
+                    IWebDriver sys_driver = new InternetExplorerDriver(IEService, IEoptions);
                     Login_Sys(input_id, input_pw, sys_driver);
                     
                     break;
                 case 1:
                     
-                    IWebDriver check_driver = new ChromeDriver(ChromeService, new ChromeOptions());
+                    IWebDriver check_driver = new ChromeDriver(ChromeService);
                     Login_Check(input_id, input_pw, check_driver);
 
                     if (textBox3.Text != "")
@@ -189,7 +223,7 @@ namespace Main
                     break;
                 case 2:
                     
-                    IWebDriver ncs_driver = new ChromeDriver(ChromeService, new ChromeOptions());
+                    IWebDriver ncs_driver = new ChromeDriver(ChromeService);
                     Login_Ncs(input_id, input_pw, ncs_driver);
                                         
                     break;
@@ -202,13 +236,13 @@ namespace Main
 
         private void button3_Click(object sender, EventArgs e)
         {
-            CS.Login_Log Login_Log = new CS.Login_Log();
-            Login_Log.Show();
+           // CS.Login_Log Login_Log = new CS.Login_Log();
+           // Login_Log.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CS.Login_Data Login_Data = new CS.Login_Data();
+            CS.Data Login_Data = new CS.Data();
             Login_Data.Show();
         }
     }

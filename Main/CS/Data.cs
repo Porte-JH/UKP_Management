@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Main.CS
 {
-    public partial class Login_Data : Form
+    public partial class Data : Form
     {
-        public Login_Data()
+        public Data()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

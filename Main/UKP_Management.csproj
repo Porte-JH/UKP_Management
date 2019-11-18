@@ -69,17 +69,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CS\Login_Data.cs">
+    <Compile Include="CS\Data.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CS\Login_Data.Designer.cs">
-      <DependentUpon>Login_Data.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CS\Login_Log.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CS\Login_Log.Designer.cs">
-      <DependentUpon>Login_Log.cs</DependentUpon>
+    <Compile Include="CS\Data.Designer.cs">
+      <DependentUpon>Data.cs</DependentUpon>
     </Compile>
     <Compile Include="CS\Main.cs">
       <SubType>Form</SubType>
@@ -91,8 +85,8 @@
     <Compile Include="DTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CS\Login_Log.resx">
-      <DependentUpon>Login_Log.cs</DependentUpon>
+    <EmbeddedResource Include="CS\Data.resx">
+      <DependentUpon>Data.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CS\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -107,6 +101,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\DBHelper.datasource" />
+    <None Include="Properties\DataSources\DTO.datasource" />
+    <None Include="Properties\DataSources\Main.datasource" />
+    <None Include="Properties\DataSources\Main.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Main.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
