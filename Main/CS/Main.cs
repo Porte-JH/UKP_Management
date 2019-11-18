@@ -70,12 +70,12 @@ namespace Main
             Student.FDATE = FDATE;
             Student.BDATE = BDATE;
 
-            if(checkBox1.Checked == true)
-            {
-                db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE);
-            }
-            
-            
+            if (checkBox1.Checked == true) Student.status = 1;
+            else Student.status = 0;
+
+            db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE, Student.status);
+
+
 
         }
 
@@ -94,10 +94,10 @@ namespace Main
             Student.FDATE = FDATE;
             Student.BDATE = BDATE;
 
-            if (checkBox1.Checked == true)
-            {
-                db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE);
-            }
+            if (checkBox1.Checked == true) Student.status = 1;
+            else Student.status = 0;
+
+            db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE, Student.status);
         }
 
         public void Login_Ncs(string input_id, string input_pw, IWebDriver ncs_driver)
@@ -120,10 +120,11 @@ namespace Main
             Student.BDATE = BDATE;
 
 
-            if (checkBox1.Checked == true)
-            {
-                db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE);
-            }
+            if (checkBox1.Checked == true) Student.status = 1;
+            else Student.status = 0;
+
+            db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE, Student.status);
+            
 
 
         }

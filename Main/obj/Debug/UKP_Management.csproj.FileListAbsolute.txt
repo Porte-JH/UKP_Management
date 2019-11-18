@@ -22,7 +22,6 @@ C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\EntityFramework.xml
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\System.Data.SQLite.xml
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Login_Log.resources
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\x86\sqlite3.dll
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\x64\sqlite3.dll
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\Main.exe.config
@@ -47,3 +46,4 @@ C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\UKP_Management.csproj.C
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.exe
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.pdb
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Data.resources
+C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Data.resources
