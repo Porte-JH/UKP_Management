@@ -75,6 +75,12 @@
     <Compile Include="CS\Data.Designer.cs">
       <DependentUpon>Data.cs</DependentUpon>
     </Compile>
+    <Compile Include="CS\Log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CS\Log.Designer.cs">
+      <DependentUpon>Log.cs</DependentUpon>
+    </Compile>
     <Compile Include="CS\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CS\Data.resx">
       <DependentUpon>Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CS\Log.resx">
+      <DependentUpon>Log.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CS\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

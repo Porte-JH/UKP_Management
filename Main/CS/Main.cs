@@ -26,10 +26,12 @@ namespace Main
 
         
 
-        string input_id;
+        public string input_id;
         string input_pw;
         string Temp;
         string Name;
+
+        
 
         string FDATE = DateTime.Now.ToString("yyyy-MM-dd");
         string BDATE = DateTime.Now.ToString("HH:mm");
@@ -43,10 +45,13 @@ namespace Main
 
         }
 
+
         private void Main_Load(object sender, EventArgs e)
         {
             db.Create_DB();
             db.CREATE_TABLE();
+
+            
         }
 
 
@@ -237,14 +242,20 @@ namespace Main
 
         private void button3_Click(object sender, EventArgs e)
         {
-           // CS.Login_Log Login_Log = new CS.Login_Log();
-           // Login_Log.Show();
+           CS.Log Login_Log = new CS.Log();
+           Login_Log.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             CS.Data Login_Data = new CS.Data();
-            Login_Data.Show();
+            Login_Data.ShowDialog();
+
+            if (Login_Data.DialogResult == DialogResult.OK)
+            {
+                textBox1.Text = Login_Data.temp;
+            }
+            
         }
     }
 }

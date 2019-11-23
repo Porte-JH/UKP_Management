@@ -17,9 +17,8 @@ namespace Main.CS
         DBHelper db = new DBHelper();
         DTO Student = new DTO();
         Main m = new Main();
-
-
-        string temp;
+        
+        public string temp;
         
 
         public Data()
@@ -30,13 +29,15 @@ namespace Main.CS
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int pos = dataGridView1.CurrentRow.Index;
-            Student.input_id = dataGridView1.Rows[pos].Cells[0].Value.ToString();
+            temp = dataGridView1.Rows[pos].Cells[1].Value.ToString();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
             string id = dataGridView1.Rows[pos].Cells[0].Value.ToString();
         }
 
         private void Data_Load(object sender, EventArgs e)
         {
-            string select_sql = "SELECT * FROM Student where STATUS = '" + 0 + "'";
+            string select_sql = "SELECT * FROM Student where STATUS = '" + 1 + "'";
 
             SQLiteConnection conn = new SQLiteConnection(db.ConnectionString);
             conn.Open();
@@ -54,9 +55,7 @@ namespace Main.CS
                         reader.GetValue(reader.GetOrdinal("NAME")),
                         reader.GetValue(reader.GetOrdinal("ID"))
 
-
                     });
-
 
                 }
                 
@@ -66,8 +65,14 @@ namespace Main.CS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Student.input_id);
+            //m.textBox1.Text = Student.input_id;
+            //MessageBox.Show(Student.input_id);
+            this.Close();
 
         }
+
+        
+        
+        
     }
 }
