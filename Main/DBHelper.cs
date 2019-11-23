@@ -12,11 +12,13 @@ namespace Main
     class DBHelper
     {
         static string DB_NAME = "UKP_DB.dat";
-        string ConnectionString = string.Format("Data Source={0};Version=3;", DB_NAME);
+        public string ConnectionString = string.Format("Data Source={0};Version=3;", DB_NAME);
+
+
 
         static List<string> temp = new List<string>();
 
-        public static void Create_DB()
+        public void Create_DB()
         {
             
             if (!System.IO.File.Exists(DB_NAME))
@@ -88,12 +90,12 @@ namespace Main
           
         }
 
-        public DTO SELECT_TABLE_DATA(string input_ID)
+        public void SELECT_TABLE_DATA(string input_ID)
         {
             SQLiteConnection conn = new SQLiteConnection(ConnectionString);
             conn.Open();
                         
-            string select_sql = "SELECT * FROM Student where ID = '" + input_ID + "' and STATUS = '" + 1 + "'";
+            string select_sql = "SELECT * FROM Student where ID = '" + input_ID + "' and STATUS = '" + 0 + "'";
 
 
 
@@ -101,7 +103,7 @@ namespace Main
             SQLiteDataReader reader = cmd.ExecuteReader();
 
 
-            return ;
+            
         }
     }
 }
