@@ -52,9 +52,9 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 12);
+            this.listView1.Location = new System.Drawing.Point(12, 27);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(650, 240);
+            this.listView1.Size = new System.Drawing.Size(648, 225);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;

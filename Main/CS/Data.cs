@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using MetroFramework.Forms;
 
 namespace Main.CS
 {
-    public partial class Data : Form
+    public partial class Data : MetroForm
     {
 
         DBHelper db = new DBHelper();

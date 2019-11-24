@@ -44,13 +44,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(123, 33);
+            this.pictureBox1.Location = new System.Drawing.Point(227, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(147, 54);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -179,17 +180,27 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(258, 337);
+            this.label5.Location = new System.Drawing.Point(277, 318);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 12);
+            this.label5.Size = new System.Drawing.Size(93, 12);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Porte,JH / 21814012";
+            this.label5.Text = "21814012 문지현";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(237, 337);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 12);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Developed by Porte.JH";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 361);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -206,7 +217,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "UKP_Management";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -231,6 +242,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label6;
     }
 }
 

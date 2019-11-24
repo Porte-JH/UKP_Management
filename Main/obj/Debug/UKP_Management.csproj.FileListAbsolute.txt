@@ -48,3 +48,5 @@ C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.pdb
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Data.resources
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Data.resources
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Log.resources
+C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\MetroFramework.dll
+C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\MetroFramework.Fonts.dll

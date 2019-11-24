@@ -12,13 +12,13 @@ using OpenQA.Selenium.IE;
 using System.Windows.Forms;
 using System.Threading;
 using System.Data.SQLite;
-
+using MetroFramework.Forms;
 
 
 namespace Main
 {
     
-    public partial class Main : Form
+    public partial class Main : MetroForm
     {
 
         DBHelper db = new DBHelper();
