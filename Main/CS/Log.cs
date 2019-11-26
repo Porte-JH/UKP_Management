@@ -41,9 +41,10 @@ namespace Main.CS
                     ListViewItem lv_item;
                     
                     temp[0] = cnt.ToString();
-                    temp[1] = reader["FDATE"].ToString();
-                    temp[2] = reader["NAME"].ToString() + "(이)가 " + reader["BDATE"].ToString()+"에 " 
-                            + reader["ID"].ToString() + " 로 접속.";
+                    temp[1] = reader["Date"].ToString();
+                    temp[2] = reader["NAME"].ToString() + "(이)가 " +
+                               reader["Service"].ToString() + " 에 접속" +
+                               "    - " + reader["ID"];
                     lv_item = new ListViewItem(temp);
                     listView1.Items.Add(lv_item);
                     cnt++;

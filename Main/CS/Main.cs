@@ -29,12 +29,12 @@ namespace Main
         public string input_id;
         string input_pw;
         string Temp;
-        string Name;
+        
 
         
 
-        string FDATE = DateTime.Now.ToString("yyyy-MM-dd");
-        string BDATE = DateTime.Now.ToString("HH:mm");
+        string Date = DateTime.Now.ToString("yyyy-MM-dd / HH:mm");
+        
 
 
         public Main()
@@ -72,13 +72,14 @@ namespace Main
             //Temp = sys_driver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td/table/tbody/tr/td/div/div/div/span/b")).Text;
 
             Student.Name = Temp.Substring(0, 3);
-            Student.FDATE = FDATE;
-            Student.BDATE = BDATE;
+            Student.Service = "종합정보시스템";
+            
+            Student.Date = Date;
 
             if (checkBox1.Checked == true) Student.status = 1;
             else Student.status = 0;
 
-            db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE, Student.status);
+            db.INSERT_TABLE(Student.input_id, Student.Name, Student.Service, Student.Date, Student.status);
 
 
 
@@ -94,15 +95,15 @@ namespace Main
             Thread.Sleep(2000);
             Temp = check_driver.FindElement(By.XPath("/html/body/div[1]/div[2]/section[1]/div/ul/li[1]")).Text;
             Student.Name = Temp.Substring(5, 3);
-            
-            
-            Student.FDATE = FDATE;
-            Student.BDATE = BDATE;
+
+
+            Student.Date = Date;
+            Student.Service = "출석체크";
 
             if (checkBox1.Checked == true) Student.status = 1;
             else Student.status = 0;
 
-            db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE, Student.status);
+            db.INSERT_TABLE(Student.input_id, Student.Name, Student.Service, Student.Date, Student.status);
         }
 
         public void Login_Ncs(string input_id, string input_pw, IWebDriver ncs_driver)
@@ -118,17 +119,17 @@ namespace Main
             ///html/body/nav/div[2]/ul[2]/li/a/span
             Temp = ncs_driver.FindElement(By.XPath("html/body/nav/div[2]/ul[2]/li/a/span")).Text;
             Student.Name = Temp.Substring(0, 3);
-            
+
             //MessageBox.Show(Name);
 
-            Student.FDATE = FDATE;
-            Student.BDATE = BDATE;
+            Student.Date = Date;
+            Student.Service = "NCS";
 
 
             if (checkBox1.Checked == true) Student.status = 1;
             else Student.status = 0;
 
-            db.INSERT_TABLE(Student.input_id, Student.Name, Student.FDATE, Student.BDATE, Student.status);
+            db.INSERT_TABLE(Student.input_id, Student.Name, Student.Service, Student.Date, Student.status);
             
 
 
@@ -156,7 +157,7 @@ namespace Main
 
             if(textBox1.Text == "" && textBox2.Text == "")
             {
-                MessageBox.Show("아이디 또는 비밀번호를 제대로 입력해주세요.");
+                MessageBox.Show(new Form { TopMost = true }, "아이디 또는 비밀번호를 제대로 입력해주세요.");
                 return;
             }  else
             {
@@ -221,7 +222,7 @@ namespace Main
                         }
                         else
                         {
-                            MessageBox.Show("출석체크가 가능한 시간이 아닙니다.");
+                            MessageBox.Show(new Form { TopMost = true }, "출석체크가 가능한 시간이 아닙니다.");
                         }
 
                     }
@@ -234,7 +235,7 @@ namespace Main
                                         
                     break;
                 default:
-                    MessageBox.Show("항목을 선택해주세요...!");
+                    MessageBox.Show(new Form { TopMost = true }, "항목을 선택해주세요...!");
                     break;
             }
             
@@ -256,6 +257,13 @@ namespace Main
                 textBox1.Text = Login_Data.temp;
             }
             
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            CS.Classroom cr = new CS.Classroom();
+            cr.Show();
+
         }
     }
 }

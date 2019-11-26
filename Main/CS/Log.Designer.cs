@@ -47,12 +47,15 @@
             // 
             // listView1
             // 
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
+            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(12, 27);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(648, 225);
             this.listView1.TabIndex = 4;
@@ -68,13 +71,13 @@
             // 
             this.columnHeader2.Text = "TIME";
             this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 80;
+            this.columnHeader2.Width = 120;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "CONTENT";
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 520;
+            this.columnHeader3.Width = 460;
             // 
             // Log
             // 

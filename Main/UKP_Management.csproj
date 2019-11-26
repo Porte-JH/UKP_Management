@@ -79,6 +79,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CS\Classroom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CS\Classroom.Designer.cs">
+      <DependentUpon>Classroom.cs</DependentUpon>
+    </Compile>
     <Compile Include="CS\Data.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     <Compile Include="DTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CS\Classroom.resx">
+      <DependentUpon>Classroom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CS\Data.resx">
       <DependentUpon>Data.cs</DependentUpon>
     </EmbeddedResource>

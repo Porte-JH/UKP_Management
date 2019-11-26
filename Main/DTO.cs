@@ -14,9 +14,9 @@ namespace Main
 
         public string Name { get; set; }
 
-        public string FDATE { get; set; }
-
-        public string BDATE { get; set; }
+        public string Date { get; set; }
+        
+        public string Service { get; set; }
 
         public int status { get; set; }
     }

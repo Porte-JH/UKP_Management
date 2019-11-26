@@ -11,7 +11,7 @@ namespace Main
 {
     class DBHelper
     {
-        static string DB_NAME = "UKP_DB.dat";
+        static string DB_NAME = "UKP_DB.db";
         public string ConnectionString = string.Format("Data Source={0};Version=3;", DB_NAME);
 
 
@@ -52,22 +52,23 @@ namespace Main
             conn.Open();
 
             string strsql = "CREATE TABLE IF NOT EXISTS Student" +
-                            "(ID varchar(20), Name varchar(20), FDATE varchar(30), BDATE varchar(30), STATUS integer" +
+                            "(ID varchar(20), Name varchar(20), Service varchar(20), Date varchar(30), STATUS integer" +
                             ")";
             SQLiteCommand cmd = new SQLiteCommand(strsql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
 
-        public void INSERT_TABLE(string ID, string Name, string FDATE, string BDATE, int STATUS)
+        public void INSERT_TABLE(string ID, string Name, string Service, string Date, int STATUS)
         {
             SQLiteConnection conn = new SQLiteConnection(ConnectionString);
             conn.Open();
             
 
             string insert_sql = "INSERT INTO Student" +
-                                "(ID, Name, FDATE, BDATE, STATUS) values ('" + ID + "','" + Name + 
-                                "', '" + FDATE + "', '" + BDATE + "', '" + STATUS + "')";
+                                "(ID, Name, Service, Date, STATUS)" +
+                                "values " +
+                                "('" + ID + "','" + Name + "', '" + Service + "', '" + Date + "', '" + STATUS + "')";
             SQLiteCommand cmd = new SQLiteCommand(insert_sql, conn);
 
             cmd.ExecuteNonQuery();
