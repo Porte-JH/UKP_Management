@@ -41,7 +41,7 @@ namespace Main.CS
             {
                 if (num == "201")
                 {
-                    if (time >= 9 && time <= 12)
+                    if (time >= 9 && time <= 11)
                     {
                         label1.Text = "사용중, 응용SW프로젝트 - 김재생";
                     }
@@ -60,7 +60,7 @@ namespace Main.CS
                 }
                 else if (num == "202")
                 {
-                    if (time >= 9 && time <= 12)
+                    if (time >= 9 && time <= 11)
                     {
                         label1.Text = "사용중, DB어드민 - 김인범";
                     }
@@ -75,7 +75,7 @@ namespace Main.CS
                 }
                 else if (num == "203")
                 {
-                    if (time >= 9 && time <= 12)
+                    if (time >= 9 && time <= 11)
                     {
                         label1.Text = "사용중, 웹프로그래밍 실무 - 장계섭";
                     }
@@ -97,7 +97,7 @@ namespace Main.CS
             {
                 if (num == "201")
                 {
-                    if (time >= 9 && time <= 12)
+                    if (time >= 9 && time <= 11)
                     {
                         label1.Text = "사용중, 시스템분석설계 - 김재생";
                     }
@@ -116,7 +116,7 @@ namespace Main.CS
                 }
                 else if (num == "202")
                 {
-                    if (time >= 9 && time <= 12)
+                    if (time >= 9 && time <= 11)
                     {
                         label1.Text = "사용중, loT프로그래밍실무 - 이종일";
                     }
@@ -131,7 +131,7 @@ namespace Main.CS
                 }
                 else if(num == "203")
                 {
-                    if(time >= 9 && time <= 12)
+                    if(time >= 9 && time <= 11)
                     {
                         label1.Text = "사용중, 모바일프로그래밍실무 - 이형일";
                     }
@@ -153,7 +153,7 @@ namespace Main.CS
             {
                 if (num == "201")
                 {
-                    if (time >= 9 && time <= 12)
+                    if (time >= 9 && time <= 11)
                     {
                         label1.Text = "사용중, UNIX어드민 - 이정식";
                     }
@@ -172,7 +172,7 @@ namespace Main.CS
                 }
                 else if(num == "202")
                 {
-                    if (time >= 9 && time <= 11)
+                    if (time >= 9 && time <= 10)
                     {
                         label1.Text = "사용중, 정보활용능력 - 이갑수";
                     }
@@ -191,7 +191,7 @@ namespace Main.CS
                 }
                 else if(num == "203")
                 {
-                    if (time >= 9 && time <= 12)
+                    if (time >= 9 && time <= 11)
                     {
                         label1.Text = "사용중, 객체지향프로그래밍실습 - 김정숙";
                     }
