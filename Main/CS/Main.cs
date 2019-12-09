@@ -171,7 +171,7 @@ namespace Main
             
             var ChromeService = ChromeDriverService.CreateDefaultService();
             var Chrome_options = new ChromeOptions();
-            Chrome_options.AddArgument("--window-size=1920,1080");
+            Chrome_options.AddArgument("--window-size=1280,720");
             ChromeService.HideCommandPromptWindow = true;
 
             var IEService = InternetExplorerDriverService.CreateDefaultService();            

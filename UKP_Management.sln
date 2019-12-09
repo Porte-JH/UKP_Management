@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UKP_Management", "Main\UKP_Management.csproj", "{F5FB6326-82BF-4A2A-96B8-1962776213C8}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "UKP_Manager", "UKP_Manager\UKP_Manager.vdproj", "{AA365EB0-4A4F-4149-81E8-05316E9CD4A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{F5FB6326-82BF-4A2A-96B8-1962776213C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5FB6326-82BF-4A2A-96B8-1962776213C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5FB6326-82BF-4A2A-96B8-1962776213C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA365EB0-4A4F-4149-81E8-05316E9CD4A8}.Debug|Any CPU.ActiveCfg = Debug
+		{AA365EB0-4A4F-4149-81E8-05316E9CD4A8}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

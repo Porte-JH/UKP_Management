@@ -72,8 +72,7 @@ namespace Main
             SQLiteCommand cmd = new SQLiteCommand(insert_sql, conn);
 
             cmd.ExecuteNonQuery();
-            conn.Close();
-                    
+            conn.Close();                   
         }
 
         public void SELECT_TABLE_LOG(string input_ID)
