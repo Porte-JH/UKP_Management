@@ -61,7 +61,7 @@ namespace Main
             sys_driver.Url = "https://auth.kimpo.ac.kr/html/login.php";
             IWebElement sys_id = sys_driver.FindElement(By.Name("id"));
             sys_id.SendKeys(input_id);
-            sys_driver.FindElement(By.Name("pw")).SendKeys(input_pw);
+            sys_driver.FindElement(By.Name("pw")).SendKeys(input_pw);         
             sys_driver.FindElement(By.XPath("//*[@id='wrapper_login']/form/div/table[3]/tbody/tr[1]/td[3]/img")).Click();
             sys_driver.Url = "http://kpis4.kimpo.ac.kr:8000/hosting/group/kpis/html/kpis_main.php";
             Temp = sys_driver.FindElement(By.XPath("/html/body/div/table/tbody/tr/td/table/tbody/tr/td/div/div/div/span/b")).Text;
@@ -116,7 +116,7 @@ namespace Main
 
             ncs_driver.FindElement(By.XPath("/html/body/div[1]/div/div/div/div/div[2]/form/div/label[2]")).Click();
             ncs_driver.FindElement(By.XPath("//*[@id='loginBtn']")).Click();
-            ///html/body/nav/div[2]/ul[2]/li/a/span
+            
             Temp = ncs_driver.FindElement(By.XPath("html/body/nav/div[2]/ul[2]/li/a/span")).Text;
             Student.Name = Temp.Substring(0, 3);
 
@@ -170,6 +170,8 @@ namespace Main
             int Now_Hour = int.Parse(DateTime.Now.ToString("hh"));
             
             var ChromeService = ChromeDriverService.CreateDefaultService();
+            var Chrome_options = new ChromeOptions();
+            Chrome_options.AddArgument("--window-size=1920,1080");
             ChromeService.HideCommandPromptWindow = true;
 
             var IEService = InternetExplorerDriverService.CreateDefaultService();            
@@ -189,7 +191,7 @@ namespace Main
                     break;
                 case 1:
                     
-                    IWebDriver check_driver = new ChromeDriver(ChromeService);
+                    IWebDriver check_driver = new ChromeDriver(ChromeService, Chrome_options);
                     Login_Check(input_id, input_pw, check_driver);
 
                     if (textBox3.Text != "")
@@ -230,7 +232,7 @@ namespace Main
                     break;
                 case 2:
                     
-                    IWebDriver ncs_driver = new ChromeDriver(ChromeService);
+                    IWebDriver ncs_driver = new ChromeDriver(ChromeService, Chrome_options);
                     Login_Ncs(input_id, input_pw, ncs_driver);
                                         
                     break;

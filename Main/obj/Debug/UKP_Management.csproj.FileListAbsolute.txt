@@ -1,8 +1,5 @@
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\x86\sqlite3.dll
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\x64\sqlite3.dll
-C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\Main.exe.config
-C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\Main.exe
-C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\Main.pdb
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\EntityFramework.dll
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\System.Data.SQLite.dll
@@ -19,8 +16,6 @@ C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.Main.resources
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.Properties.Resources.resources
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\UKP_Management.csproj.GenerateResource.cache
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\UKP_Management.csproj.CopyComplete
-C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.exe
-C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.pdb
 C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Data.resources
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\x86\sqlite3.dll
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\bin\Debug\x64\sqlite3.dll
@@ -54,3 +49,12 @@ C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\obj\Debug\UKP-Manager.applicatio
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\obj\Debug\UKP_Management.csproj.CopyComplete
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\obj\Debug\UKP-Manager.exe
 C:\Users\Ji-Hyeon\Downloads\UKP_Management\Main\obj\Debug\UKP-Manager.pdb
+C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Classroom.resources
+C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\Main.CS.Log.resources
+C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\UKP-Manager.exe
+C:\Users\Jihyeon\Downloads\UKP_Management\Main\obj\Debug\UKP-Manager.pdb
+C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\UKP-Manager.exe.config
+C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\UKP-Manager.exe
+C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\UKP-Manager.pdb
+C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\MetroFramework.dll
+C:\Users\Jihyeon\Downloads\UKP_Management\Main\bin\Debug\MetroFramework.Fonts.dll
